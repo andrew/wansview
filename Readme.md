@@ -21,23 +21,23 @@ Only tested with [Wansview NC541W](http://www.amazon.co.uk/gp/product/B006UCJ64S
 
 Movement:
 
-  webcam.up()
-  webcam.down()
-  webcam.left()
-  webcam.right()
-  webcam.rightUp()
-  webcam.rightDown()
-  webcam.leftUp()
-  webcam.leftDown()
+    webcam.up()
+    webcam.down()
+    webcam.left()
+    webcam.right()
+    webcam.rightUp()
+    webcam.rightDown()
+    webcam.leftUp()
+    webcam.leftDown()
 
 Panning:
 
-  webcam.panHorizontal()
-  webcam.panVertical()
+    webcam.panHorizontal()
+    webcam.panVertical()
 
 Take picture:
 
-  webcam.snapshot('path/to/image.png')
+    webcam.snapshot('path/to/image.png')
 
 ## Copyright
 
