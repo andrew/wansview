@@ -4,6 +4,10 @@ Wansview webcam controller for direction and taking pictures
 
 Only tested with [Wansview NC541W](http://www.amazon.co.uk/gp/product/B006UCJ64S/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B006UCJ64S&linkCode=as2&tag=teabass-21)
 
+## Install
+
+    npm install wansview
+
 ## Usage
 
     var Webcam = require('wansview')
