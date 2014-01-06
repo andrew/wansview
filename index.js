@@ -55,13 +55,11 @@ var Webcam = function(ip, username, password){
   }
 
   this.snapshot = function(path){
-    request.get('http://'+this.ip+'/snapshot.cgi')
-           .auth(username, password, false)
-           .pipe(fs.createWriteStream(path))
+    this.sendCommand('/snapshot.cgi').pipe(fs.createWriteStream(path))
   }
 
   this.sendCommand = function(path){
-    request.get('http://'+this.ip+path).auth(username, password, false)
+    return request.get('http://'+this.ip+path).auth(username, password, false)
   }
 }
 
