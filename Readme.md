@@ -43,6 +43,10 @@ Take picture:
 
     webcam.snapshot() // returns a stream
 
+Stream multiple images:
+
+    webcam.jpegStream() // returns a stream
+
 ## Example
 
 Control the webcam movement from an xbox controller:
