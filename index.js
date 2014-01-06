@@ -1,5 +1,5 @@
-var request = require('request')
-var fs = require('fs')
+var request = require('request'),
+    MjpegConsumer = require("mjpeg-consumer");
 
 var Webcam = function(ip, username, password){
   this.ip = ip
@@ -56,6 +56,10 @@ var Webcam = function(ip, username, password){
 
   this.snapshot = function(path){
     return this.sendCommand('/snapshot.cgi')
+  }
+
+  this.jpegStream = function(){
+    return this.sendCommand("/videostream.cgi").pipe(new MjpegConsumer())
   }
 
   this.sendCommand = function(path){

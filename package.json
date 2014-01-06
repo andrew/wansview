@@ -12,6 +12,7 @@
   "author": "Andrew Nesbitt",
   "license": "MIT",
   "dependencies": {
-    "request": "~2.30.0"
+    "request": "~2.30.0",
+    "mjpeg-consumer": "~0.3.1"
   }
 }
