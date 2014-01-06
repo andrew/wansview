@@ -55,7 +55,7 @@ var Webcam = function(ip, username, password){
   }
 
   this.snapshot = function(path){
-    this.sendCommand('/snapshot.cgi').pipe(fs.createWriteStream(path))
+    return this.sendCommand('/snapshot.cgi')
   }
 
   this.sendCommand = function(path){

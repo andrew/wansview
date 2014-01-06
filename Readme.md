@@ -41,33 +41,34 @@ Panning:
 
 Take picture:
 
-    webcam.snapshot('path/to/image.png')
+    webcam.snapshot() // returns a stream
 
 ## Example
 
 Control the webcam movement from an xbox controller:
 
 ```javascript
-var XboxController = require('xbox-controller')
+var XboxController = require('xbox-controller'),
+    fs = require('fs');
 var xbox = new XboxController
- 
+
 var Webcam = require('wansview')
 var webcam = new Webcam('192.168.1.178', 'admin', '123456')
- 
+
 var arrows = ["dup","ddown", "dleft", "dright"]
- 
+
 arrows.forEach(function(element, index, array) {
   xbox.on(element + ':press', function (key) {
     webcam[element.slice(1)]()
   });
- 
+
   xbox.on(element + ':release', function (key) {
     webcam.stop()
   });
 })
- 
+
 xbox.on('a:press', function (key) {
-  webcam.snapshot((new Date).toString() + '.png')
+  webcam.snapshot.pipe(fs.createWriteStream((new Date).toString() + '.png'));
 });
 ```
 
